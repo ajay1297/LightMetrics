@@ -1,0 +1,25 @@
+{
+  "name": "lightmetrics",
+  "version": "1.0.0",
+  "description": "lightmetrics",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajay1297/LightMetrics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajay1297/LightMetrics/issues"
+  },
+  "homepage": "https://github.com/ajay1297/LightMetrics#readme",
+  "dependencies": {
+    "config": "^3.3.9",
+    "express": "^4.18.2",
+    "mysql2": "^3.6.0",
+    "sequelize": "^6.32.1"
+  }
+}

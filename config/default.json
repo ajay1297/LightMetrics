@@ -1,0 +1,9 @@
+{
+    "database":"lightmetrics",
+    "username":"root",
+    "password":"",
+    "host":"localhost",
+    "dialect":"mysql",
+    "port":9753,
+    "jwtSecretKey":"ThiSHaSTOBEASecreTKeYFoRJwT"
+}
