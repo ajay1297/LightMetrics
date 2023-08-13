@@ -15,7 +15,7 @@ class CommentManagement {
             console.log(req.body);
             let {comment, userid, commentid} = req.body;
             if(comment == null || userid == null) {
-                res.status(200).send(`Please send required params`);
+                return res.status(200).send(`Please send required params`);
             }
             let commentV = null;
             if(commentid == null) {
@@ -39,7 +39,7 @@ class CommentManagement {
             let {comment} = req.body;
             let {commentid} = req.params;
             if(comment == null || commentid == null) {
-                res.status(200).send(`Please send required params`);
+                return res.status(200).send(`Please send required params`);
             }
             let commentV = await comment_model.findOne({
                 where: {
@@ -62,7 +62,7 @@ class CommentManagement {
             console.log(req.body);
             let {commentid} = req.body;
             if(commentid == null) {
-                res.status(200).send(`Please send required params`);
+                return res.status(200).send(`Please send required params`);
             }
             let commentV = await comment_model.destroy({
                 where: {
@@ -81,7 +81,7 @@ class CommentManagement {
             console.log(req.body);
             let { userid } = req.body;
             if(userid == null) {
-                res.status(200).send(`Please send required params`);
+                return res.status(200).send(`Please send required params`);
             }
             let commentListObj = await comment_model.findAll({
                 where: {
@@ -98,13 +98,12 @@ class CommentManagement {
     async getComment(req, res) {
         try {
             console.log(req.body);
-            let { userid, commentid } = req.body;
-            if(userid == null || commentid == null) {
-                res.status(200).send(`Please send required params`);
+            let { commentid } = req.body;
+            if(commentid == null) {
+                return res.status(200).send(`Please send required params`);
             }
             let commentListObj = await comment_model.findAll({
                 where: {
-                    userid,
                     commentid
                 }
             });
@@ -119,7 +118,7 @@ class CommentManagement {
         try {
             const commentV = [req.body.commentid]
             if(req.body.commentid == null) {
-                res.status(200).send(`Please send required params`);
+                return res.status(200).send(`Please send required params`);
             }
             const list = await sequelize.query(queries.nestedComments, {replacements: commentV});
             console.log(list);

@@ -10,6 +10,9 @@ class UserManagement {
     async createUser(req, res) {
         try {
             let {name, password, email} = req.body;
+            if(name == null || password == null || email == null) {
+                return res.status(200).send(`Please send required params`);
+            }
             let user = new user_model({name, password, email});
             let userObj = await user.save();
             return res.status(200).send(`User Registered with ID : ${userObj.userid}`);
