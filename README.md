@@ -6,7 +6,6 @@
 
 ### Create User
 
-Creates the
 POST Method - https://f541-157-45-198-244.ngrok-free.app/api/v1/user/create
 
 {
