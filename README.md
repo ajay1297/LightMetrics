@@ -49,6 +49,7 @@ Deletes the comment from the Database.
 ### Get All Comments for User
 
 GET METHOD - https://f541-157-45-198-244.ngrok-free.app/api/v1/comment/allcomments
+
 {
 "userid":8
 }
@@ -68,6 +69,7 @@ Returns all the child or nested comments for the comment provided in the body
 ### Get Single Comment for User
 
 GET METHOD - https://f541-157-45-198-244.ngrok-free.app/api/v1/comment
+
 {
 "commentid":8
 }
